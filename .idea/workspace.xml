@@ -2,34 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bef9a86a-6fbe-4749-93f9-5ab3771e868a" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/contact_box/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contact_box/static/contact_box/js/jquery.formset.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contact_box/static/contact_box/js/tablesort.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contact_box/static/contact_box/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contact_box/templates/contact_box/add.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contact_box/templates/contact_box/address_delete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contact_box/templates/contact_box/address_modify.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contact_box/templates/contact_box/all_address.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contact_box/templates/contact_box/all_groups.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contact_box/templates/contact_box/all_people.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contact_box/templates/contact_box/all_people2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contact_box/templates/contact_box/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contact_box/templates/contact_box/delete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contact_box/templates/contact_box/edit_person.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contact_box/templates/contact_box/group_delete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contact_box/templates/contact_box/group_modify.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contact_box/templates/contact_box/modify.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contact_box/templates/contact_box/navbar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contact_box/templates/contact_box/person_confirm_delete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contact_box/templates/contact_box/select_address.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contact_box/templates/contact_box/single_person.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contact_box/templatetags/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contact_box/templatetags/poll_extras.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contact_box/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/contact_box/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contact_box/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/contact_box/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contact_box/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/contact_box/forms.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -60,7 +33,7 @@
           <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/contact_box/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="843">
+                <state relative-caret-position="485">
                   <caret line="225" selection-start-line="225" selection-end-line="225" />
                   <folding>
                     <element signature="e#0#57#0" expanded="true" />
@@ -85,7 +58,7 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="all_groups.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="all_groups.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/contact_box/templates/contact_box/all_groups.html">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="-236">
@@ -94,11 +67,20 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
+          <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/contact_box/models.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="235">
+                  <caret line="23" column="26" lean-forward="true" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="forms.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/contact_box/forms.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="536">
-                  <caret line="42" selection-start-line="42" selection-end-line="42" />
+                <state relative-caret-position="394">
+                  <caret line="34" column="21" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
                   <folding>
                     <element signature="e#0#34#0" expanded="true" />
                   </folding>
@@ -166,8 +148,8 @@
         <option value="$PROJECT_DIR$/contact_box/templates/contact_box/group_modify.html" />
         <option value="$PROJECT_DIR$/project/urls.py" />
         <option value="$PROJECT_DIR$/contact_box/views.py" />
-        <option value="$PROJECT_DIR$/contact_box/forms.py" />
         <option value="$PROJECT_DIR$/contact_box/templates/contact_box/all_groups.html" />
+        <option value="$PROJECT_DIR$/contact_box/forms.py" />
       </list>
     </option>
   </component>
@@ -329,6 +311,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32923076" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
@@ -584,26 +567,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/contact_box/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="68" lean-forward="true" selection-start-line="15" selection-start-column="4" selection-end-line="16" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/contact_box/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="536">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/contact_box/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="843">
+        <state relative-caret-position="485">
           <caret line="225" selection-start-line="225" selection-end-line="225" />
           <folding>
             <element signature="e#0#57#0" expanded="true" />
@@ -615,6 +581,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-236">
           <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contact_box/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="23" column="26" lean-forward="true" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contact_box/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="34" column="21" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

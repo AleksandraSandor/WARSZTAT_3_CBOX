@@ -32,8 +32,8 @@ class AddressForm(ModelForm):
 
 class GroupForm(ModelForm):
     class Meta:
-        model = Group, Person
-        fields = ('title', 'description', '')
+        model = Group
+        fields = ('title', 'description', 'persons')
 
 class SearchForm(forms.Form):
     title = forms.CharField(max_length=128, required=False)
