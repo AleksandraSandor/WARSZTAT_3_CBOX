@@ -1,0 +1,19 @@
+<header class="site-header">
+  <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+    <div class="container">
+        <a class="navbar-brand mr-5" href="{% url 'all_people'  %}">Contact BOX by Olson</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+
+        <!-- Navbar Right Side -->
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" href="{% url 'all_people' %}">Contacts</a>
+            <a class="nav-item nav-link" href="{% url 'new_person' %}" role="button">New contact</a>
+            <a class="nav-item nav-link" href="{% url 'all_address' %}">Addresses</a>
+            <a class="nav-item nav-link" href="{% url 'all_groups' %}">Groups</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>

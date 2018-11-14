@@ -1,0 +1,55 @@
+{% extends "contact_box/base.html" %}
+{% load poll_extras %}
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12">
+
+
+                <div class="table-responsive">
+
+                    <table id="mytable" class="table table-bordred table-striped">
+
+                        <thead>
+                            <th>Name</th>
+                            <th>Surname</th>
+                            <th>Address</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </thead>
+
+                        <tbody>
+                            {% for person in persons %}
+                                <tr>
+                                    <td><a href="{% url 'show_person' id=person.id %}"> {{ person.name }}</a></td>
+                                    <td>{{ person.surname }}</td>
+                                    <td>{{ person.address }}</td>
+                                    <td>{{ person.email_set.all|queryset_to_list }}</td>
+                                    <td>{{ person.phonenumber_set.all|queryset_to_list }}</td>
+                                    <td>
+                                        <a href="{% url 'modify_person' person.id %}" class="btn btn-primary btn-xs" data-toggle="tooltip" title="Edit"><span class="fas fa-user-edit"></span></a>
+                                    </td>
+                                    <td>
+                                        <a href="{% url 'delete_person' person.id %}" class="btn btn-danger btn-xs" data-toggle="tooltip" title="Delete"><span class="fas fa-trash-alt"></span></a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+
+                    </div>
+                        <a class="nav-item nav-link" href="{% url 'new_person' %}" role="button">Add new contact</a>
+                    <div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+{% endblock content %}

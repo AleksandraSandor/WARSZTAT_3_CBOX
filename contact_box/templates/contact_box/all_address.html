@@ -1,0 +1,53 @@
+{% extends "contact_box/base.html" %}
+{% load poll_extras %}
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12">
+
+
+                <div class="table-responsive">
+
+                    <table id="mytable" class="table table-bordred table-striped">
+
+                        <thead>
+                            <th>City</th>
+                            <th>Street</th>
+                            <th>Home number</th>
+                            <th>Flat number</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </thead>
+
+                        <tbody>
+                            {% for adres in address %}
+                                <tr>
+                                    <td>{{ adres.city }} </td>
+                                    <td>{{ adres.street }}</td>
+                                    <td>{{ adres.home_number }}</td>
+                                    <td>{{ adres.flat_number }}</td>
+                                    <td>
+                                        <a href="{% url 'edit_address' adres.id %}" class="btn btn-primary btn-xs" data-toggle="tooltip" title="Edit"><span class="fas fa-user-edit"></span></a>
+                                    </td>
+                                    <td>
+                                        <a href="{% url 'delete_address' adres.id %}" class="btn btn-danger btn-xs" data-toggle="tooltip" title="Delete"><span class="fas fa-trash-alt"></span></a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+
+                    </div>
+                        <a class="nav-item nav-link" href="{% url 'add_address' %}" role="button">Add new address</a>
+                    <div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+{% endblock content %}

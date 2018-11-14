@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'project.wsgi.application'
 DATABASES = {
     'default': {
         'HOST': '127.0.0.1',
-        'NAME': 'sale_db',
+        'NAME': 'cbox_db',
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'USER': 'aleksandrasandor',
         'PASSWORD': '1987lukas',
@@ -122,3 +122,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'project/media')

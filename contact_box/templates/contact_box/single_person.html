@@ -1,0 +1,91 @@
+{% extends "contact_box/base.html" %}
+{% load poll_extras %}
+{% block content %}
+    <article class="media content-section">
+        <div class="media-body">
+            <h2 class="article-title">{{ person.name }} {{ person.surname }}</h2>
+            <p class="article-content">Description: {{ person.note }}</p>
+            <p class="article-content">Adress:
+                {% if address %}
+                    {% for add in address %}
+                        {{ add.city }}, {{ add.street }} {{ add.home_number }}/ {{ add.flat_number }}
+                    {% endfor %}
+                    {% else %}
+                    No assignment
+                {% endif %}
+            <br>
+            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{%  url 'select_address' person.id %}">Select Address</a>
+                <a class="btn btn-danger btn-sm mt-1 mb-1" href="{%  url 'delete_person_address' person.id %}">Delete Address</a>
+
+            </p>
+            <p class="article-content">Phones:
+                <div class="table-responsive">
+        {% if phones %}
+                    <table id="mytable" class="table table-bordred table-striped">
+                        <thead>
+                            <th>Type</th>
+                            <th>Number</th>
+                            <th>Delete</th>
+                        </thead>
+                            {% for phone in phones %}
+                        <tbody>
+                                <tr>
+                                    <td> {{ phone.type_number|phone_type}} </td>
+                                    <td> {{ phone.phone_number }}</td>
+                                    <td>
+                                        <a href="{% url 'delete_phone' phone.id %}" class="btn btn-danger btn-xs" data-toggle="tooltip" title="Delete"><span class="fas fa-trash-alt"></span></a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+        {%  else %}
+            <li>No phone numbers</li>
+        {%  endif %}
+        <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{%  url 'add_phone' person.id %}">Add Phone</a>
+        </div>
+<br>
+            <p class="article-content">Emails:
+                <div class="table-responsive">
+        {% if emails %}
+                    <table id="mytable" class="table table-bordred table-striped">
+                        <thead>
+                            <th>Type</th>
+                            <th>Email</th>
+                            <th>Delete</th>
+                        </thead>
+                            {% for email in emails %}
+                        <tbody>
+                                <tr>
+                                    <td> {{ email.type_email|email_type}} </td>
+                                    <td> {{ email.email_address }}</td>
+                                    <td>
+                                        <a href="{% url 'delete_email' email.id %}" class="btn btn-danger btn-xs" data-toggle="tooltip" title="Delete"><span class="fas fa-trash-alt"></span></a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+        {% else %}
+            <li>No email addresses</li>
+        {%  endif %}
+        <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{%  url 'add_email' person.id %}">Add Email</a>
+        </div>
+<br>
+
+            <p class="article-content">Groups:
+                <ul>
+            {% for group in object.groups.all %}
+                        <li><a href="{% url 'group-detail' group.id %}">{{ group }}</a></li>
+                    {% empty %}
+                        <li>Not a member of any group</li>
+                    {% endfor %}
+                </ul>
+            </p>
+            <div class="article-metadata">
+                <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{%  url 'modify_person' person.id %}">Update Person</a>
+                <a class="btn btn-danger btn-sm mt-1 mb-1" href="{%  url 'delete_person' person.id %}">Delete Person</a>
+            </div>
+        </div>
+    </article>
+{% endblock content %}
