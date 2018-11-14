@@ -33,7 +33,10 @@ class AddressForm(ModelForm):
 class GroupForm(ModelForm):
     class Meta:
         model = Group
+        exclude = ["people"]
         fields = ('title', 'description', 'persons')
+
+
 
 class SearchForm(forms.Form):
     title = forms.CharField(max_length=128, required=False)

@@ -1,0 +1,32 @@
+{% extends "contact_box/base.html" %}
+{% load poll_extras %}
+{% block content %}
+    <h1>Group:  {{ group.title }} </h1> <br>
+    <p> Description: {{ group.description }}</p> <br>
+
+    <div class="table-responsive">
+    <p>Members:</p>
+        {% if group %}
+            <table id="mytable" class="table table-bordred table-striped">
+                <thead>
+                    <th>Name</th>
+                    <th>Surname</th>
+                </thead>
+                    {% for people in group.persons.all %}
+                <tbody>
+                        <tr>
+                            <td> {{ people.name }} </td>
+                            <td> {{ people.surname }} </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {%  else %}
+            <li>No members</li>
+        {%  endif %}
+
+        </div>
+
+
+{#        </div>#}
+{% endblock content %}

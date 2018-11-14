@@ -28,8 +28,9 @@ def show_person(request, id):
     phones = Phone.objects.filter(persons_id=id)
     emails = Email.objects.filter(persons_id=id)
     address = Address.objects.filter(id=person.address_id)
+    groups = Group.objects.filter(persons = id)
     return render(request, 'contact_box/single_person.html',
-                  {'person': person, 'phones': phones, 'emails': emails, 'address': address})
+                  {'person': person, 'phones': phones, 'emails': emails, 'address': address, 'groups': groups})
 
 
 def modify_person(request, id):
@@ -162,6 +163,7 @@ def group_add(request):
         if form.is_valid():
             post = form.save(commit=False)
             post.save()
+            form.save_m2m()
             return redirect('all_groups')
     else:
         form = GroupForm()
@@ -175,6 +177,7 @@ def edit_group(request, id):
         if form.is_valid():
             post = form.save(commit=False)
             post.save()
+            form.save_m2m()
             return redirect('all_groups')
     else:
         form = GroupForm(instance=post)
@@ -188,16 +191,11 @@ def delete_group(request, id):
     return render(request, 'contact_box/group_delete.html')
 
 def group_detail(request, id):
-    # group = get_object_or_404(Group, pk=id)
-    # people = objects.filter(persons_id=id)
-    # emails = Email.objects.filter(persons_id=id)
-    # address = Address.objects.filter(id=person.address_id)
-    # return render(request, 'contact_box/single_person.html',
-    #               {'person': person, 'phones': phones, 'emails': emails, 'address': address})
-    pass
+    group = get_object_or_404(Group, pk=id)
 
-def person_group(request, id):
-    pass
+    return render(request, 'contact_box/single_group.html',
+                  {'group': group})
+
 
 def group_search(request):
     if request.method == "POST":

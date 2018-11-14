@@ -19,7 +19,6 @@
                             <th>Edit</th>
                             <th>Delete</th>
                             <th>Details</th>
-                            <th>Add Person</th>
                         </thead>
 
                         <tbody>
@@ -35,9 +34,6 @@
                                     </td>
                                     <td>
                                         <a href="{% url 'group_detail' group.id %}" class="btn btn-info btn-xs" data-toggle="tooltip" title="Info"><span class="fas fa-info xs"></span></a>
-                                    </td>
-                                    <td>
-                                        <a href="{% url 'person_group' group.id %}" class="btn btn-success btn-xs" data-toggle="tooltip" title="Info"><span class="fas fa-info xs"></span></a>
                                     </td>
                                 </tr>
                             {% endfor %}

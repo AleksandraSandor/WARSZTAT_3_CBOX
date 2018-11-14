@@ -74,13 +74,27 @@
 <br>
 
             <p class="article-content">Groups:
-                <ul>
-            {% for group in object.groups.all %}
-                        <li><a href="{% url 'group-detail' group.id %}">{{ group }}</a></li>
-                    {% empty %}
-                        <li>Not a member of any group</li>
-                    {% endfor %}
-                </ul>
+                <div class="table-responsive">
+        {% if groups %}
+                    <table id="mytable" class="table table-bordred table-striped">
+                        <thead>
+                            <th>Name</th>
+                            <th>Edit group</th>
+                        </thead>
+                            {% for group in groups %}
+                        <tbody>
+                                <tr>
+                                    <td> <a href="{% url 'edit_group' group.id %}">{{ group }} </a></td>
+                                    <td>
+                                        <a href="{% url 'edit_group' group.id %}" class="btn btn-danger btn-xs" data-toggle="tooltip" title="Delete"><span class="fas fa-trash-alt"></span></a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+        {% else %}
+            <li>Not a member of any groups</li>
+        {%  endif %}
             </p>
             <div class="article-metadata">
                 <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{%  url 'modify_person' person.id %}">Update Person</a>
