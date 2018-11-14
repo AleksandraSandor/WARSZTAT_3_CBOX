@@ -1,8 +1,6 @@
-from django.shortcuts import render
 from contact_box.models import Address, Person, Phone, Email, Group
-from contact_box.forms import PostForm, FormsForm, PhoneForm, EmailForm, AddressForm, GroupForm, SearchForm
+from contact_box.forms import PostForm, FormsForm, PhoneForm, EmailForm, AddressForm, GroupForm
 from django.shortcuts import render, get_object_or_404, redirect
-
 
 # Create your views here.
 def new_person(request):
@@ -14,7 +12,7 @@ def new_person(request):
             return redirect('show_person', id=post.id)
     else:
         form = PostForm()
-        msg_add = "Dodaj nową osobę:"
+        msg_add = "Add new person:"
     return render(request, 'contact_box/add.html', {"msg_add": msg_add, 'form': form})
 
 
@@ -167,8 +165,7 @@ def group_add(request):
             return redirect('all_groups')
     else:
         form = GroupForm()
-        msg_add = "Add new group:"
-    return render(request, 'contact_box/add.html', {"msg_add": msg_add, 'form': form})
+    return render(request, 'contact_box/add.html', {'form': form})
 
 def edit_group(request, id):
     post = get_object_or_404(Group, pk=id)
@@ -192,32 +189,22 @@ def delete_group(request, id):
 
 def group_detail(request, id):
     group = get_object_or_404(Group, pk=id)
-
     return render(request, 'contact_box/single_group.html',
                   {'group': group})
 
 
 def group_search(request):
     if request.method == "POST":
-        form = SearchForm(request.POST)
-        if form.is_valid():
-            name = form.cleaned_data['name']
-            surname = form.cleaned_data['surname']
-            title = form.cleaned_data['title']
-            description = form.cleaned_data['description']
-            if title:
-                group_title = Group.objects.filter(title__icontains=title)
-            else:
-                group_title = Group.objects.all()
-
-            if description:
-                group_description = Group.objects.filter(description__gte=description)
-            else:
-                group_description = Group.objects.all()
-
-            rooms = group_title & group_description
-            temp = rooms
-            return render(request, 'contact_box/all_groups.html', {'rooms': temp, 'get': True})
+        contact_name = request.POST.get("member")
+        contacts = Person.objects.filter(name__icontains=contact_name) | Person.objects.filter(surname__icontains=contact_name)
+        groups = None
+        if contacts:
+            groups = contacts[0].group.all()
+        else:
+            groups = ""
+        context = {"groups": groups}
+        return render(request, "contact_box/search_members.html", context)
     else:
-        form = SearchForm()
-        return render(request, 'contact_box/all_groups.html', {'get': False, 'form':form})
+        return render(request, "contact_box/search_members.html")
+
+

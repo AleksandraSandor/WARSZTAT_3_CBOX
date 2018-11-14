@@ -35,11 +35,3 @@ class GroupForm(ModelForm):
         model = Group
         exclude = ["people"]
         fields = ('title', 'description', 'persons')
-
-
-
-class SearchForm(forms.Form):
-    title = forms.CharField(max_length=128, required=False)
-    description = forms.CharField(required=False)
-    # name = forms.CharField(max_length=32, required=False)
-    # surname = forms.CharField(max_length=32, required=False)

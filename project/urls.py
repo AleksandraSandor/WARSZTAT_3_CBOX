@@ -39,5 +39,5 @@ urlpatterns = [
     path('edit_group/<int:id>/', views.edit_group, name="edit_group"),
     path('delete_group/<int:id>/', views.delete_group, name="delete_group"),
     path('group_detail/<int:id>/', views.group_detail, name="group_detail"),
-    path('groupSearch/', views.group_search, name="group_search"),
+    path('group_search/', views.group_search, name="group_search"),
 ]

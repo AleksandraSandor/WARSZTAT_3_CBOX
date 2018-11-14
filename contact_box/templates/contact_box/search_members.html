@@ -1,0 +1,28 @@
+{% extends "contact_box/base.html" %}
+
+{% block content %}
+    </div>
+    <div class="container">
+        <h1>Find member in groups:</h1><br>
+        <form method="post" class="form">
+        <input maxlength="64" type="text" name="member" value="{{ contact.name }}"><br>
+            <br>
+            <button type="submit" class="save btn btn-default">Save</button><br>
+
+            {% csrf_token %}
+            {% if groups != "" %}
+                </form><br>
+                <ol>
+                    {% for group in groups %}
+
+                        <li>
+                            <a href="{% url 'group_detail' group.id %}"> {{ group.title }} </a>
+                        </li>
+                    {% endfor %}
+                </ol>
+            {% else %}
+                <br><br><p> not found </p>
+            {% endif %}
+
+    </div>
+{% endblock %}
